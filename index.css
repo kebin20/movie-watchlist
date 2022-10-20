@@ -1,0 +1,45 @@
+body {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.bg-top-img{
+   width: 100%;
+    height: 208px;
+    object-fit: cover;
+    filter: brightness(30%);
+}
+
+.top-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    position: absolute;
+    top: 45px;
+    color: white;
+}
+
+h1.top-page-title {
+    padding: 0.5em;
+    margin-right: 8em;
+    color: white;
+}
+
+a.link-to-watchlist {
+    color: white;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explore{
+    padding: 2em;
+    margin-top: 10em;
+}
+
+.no-result{
+    display: none;
+}
