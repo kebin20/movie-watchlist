@@ -1,45 +1,142 @@
+html{
+  font-family: 'Inter', sans-serif;
+}
+
 body {
-    width: 600px;
-    margin: 0 auto;
+   max-width: 900px;
+   margin: 0 auto;
 }
 
-.bg-top-img{
-   width: 100%;
-    height: 208px;
-    object-fit: cover;
-    filter: brightness(30%);
+.top-container{
+  width: 120%;
+   height:208px;
+   background-image: linear-gradient(
+    rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)
+  ),url("https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
-.top-container {
+.inner-top-container {
+    width: 85%;
     display: flex;
     align-items: baseline;
-    justify-content: center;
-    position: absolute;
-    top: 45px;
+    justify-content: space-between;
+    position: relative;
     color: white;
 }
 
 h1.top-page-title {
+    margin-top: 2em;
     padding: 0.5em;
-    margin-right: 8em;
     color: white;
+    font-weight: 800;
 }
 
 a.link-to-watchlist {
+  max-width: 95%;
     color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 2em;
+    display: block;
 }
 
 .main-content{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
-.explore{
-    padding: 2em;
-    margin-top: 10em;
+@media only screen and (min-width: 1000px) {
+  .main-content {
+    width: 120%;
+  }
+
+  .inner-top-container{
+    width: 100%;
+  }
 }
 
 .no-result{
-    display: none;
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  width: 150px;
+  height: 90px;
+  color: grey;
+}
+
+.search-bar {
+  width: 95%;
+  display: flex;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 6px;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+    bottom: 1.5em;
+}
+
+input.search-box {
+  font-family: 'Inter', sans-serif;
+  width: 95%;
+  height:38px;
+  border: none;
+  font-size: 1rem;
+  padding: 9px 4px 9px 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+}
+
+.search-button {
+  font-family: 'Inter', sans-serif;
+  border: none;
+  background:none;
+  background-color: #D1D5DB;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius:6px;
+  border-left: 1px solid grey;
+  width: 120px;
+  padding: 9px 11px 9px 17px;
+  cursor: pointer;
+}
+
+input {
+  outline: none
+}
+
+input:focus,
+input:active {
+  border-color: transparent;
+  border: 2px solid lightblue;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius:6px;
+}
+  
+.explore {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  width: 150px;
+  height: 90px;
+  color: grey;
+  padding: 2em;
+  margin-top: 7em;
+}
+
+.explore>p{
+  font-size: 1.5rem;
+}
+
+.populated-movies{
+  display: flex;
+  flex-direction: column;
+  margin-top: 4em;
+}
+
+.row-1,.row-2{
+   display: flex;
+   align-items: center;
 }

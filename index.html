@@ -7,27 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Watchlist Homepage</title>
     <link rel="stylesheet" href="index.css">
+    <!--   Icons -->
+    <script src="https://kit.fontawesome.com/566b902c1e.js" crossorigin="anonymous"></script>
+    <!--   Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;800&family=Smythe&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-
-    <img src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-        alt="background picture of movies" class="bg-top-img">
-    <div class="top-container">
+<header class="top-container">
+    <div class="inner-top-container">
         <h1 class="top-page-title">Find your film</h1>
         <a class="link-to-watchlist" href="./watchlist.html">My Watchlist</a>
     </div>
+</header>
+
 
     <div class="main-content">
-        <div class="search-bar">
-            <img src="" alt="" class="search-icon">
-            <label for="search-box"></label>
-            <input type="text" class="search-box" placeholder="Search for a movie">
-            <button>Search</button>
+
+            <div class="search-bar">
+                <label for="search-box"></label>
+                <input type="search" class="search-box" id="search-box" placeholder="Search for a movie">
+                <button class="search-button" id="search-button" type="submit">Search</button>
+            </div>
+
+        <div class="populated-movies" id="populated-movies">
         </div>
 
         <div class="explore">
-            <img src="" alt="icon of a movie saying start exploring" class="bg-movie-icon">
+            <i class="fa-solid fa-film fa-5x"></i>
             <p>Start Exploring</p>
         </div>
         <p class="no-result">Unable to find what you're looking for. Please try another search.</p>
