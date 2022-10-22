@@ -50,15 +50,7 @@ a.link-to-watchlist {
     position: relative;
 }
 
-@media only screen and (min-width: 1000px) {
-  .main-content {
-    width: 120%;
-  }
 
-  .inner-top-container{
-    width: 100%;
-  }
-}
 
 .no-result{
   display: none;
@@ -70,7 +62,7 @@ a.link-to-watchlist {
 }
 
 .search-bar {
-  width: 95%;
+  width: 80%;
   display: flex;
   background-color: white;
   border: 1px solid grey;
@@ -139,4 +131,31 @@ input:active {
 .row-1,.row-2{
    display: flex;
    align-items: center;
+}
+
+@media screen and (min-width: 700px) {
+  .inner-top-container{
+    width: 80%;
+  }
+
+  .search-bar {
+    width: 70%
+  }
+}
+
+@media screen and (min-width: 1100px) {
+
+  body {
+    display: flex;
+    flex-direction: column;
+}
+
+.inner-top-container{
+  width: 100%;
+}
+
+.top-container {
+  width: 100%;
+}
+
 }
