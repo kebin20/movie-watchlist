@@ -7,7 +7,7 @@ let movie = {
   fetchMovies: async function (movie) {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?i=tt3896198&apikey=${this.apiKey}&t=${movie}`
+        `https://www.omdbapi.com/?i=tt3896198&apikey=${this.apiKey}&t=${movie}`
       );
       const data = await response.json();
       console.log(data);
