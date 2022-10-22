@@ -30,13 +30,13 @@ let movie = {
         <div class="info-row">
         <div class="row-1">
             <h3 class="movie-title">${title}</h3>
-            <i class="star-icon">Star</i> <span class="rating-value">${rating}</span>
+            <i class="star-icon">⭐</i> <span class="rating-value">${rating}</span>
         </div>
         <div class="row-2">
-            <h4 class="movie-runtime">${runTime}</h4>
-            <h4 class="movie-genre">${genre}</h4>
-            <button class="add-to-watchlist" type="submit">+</button>
-            <p class="button-content">Add to watchlist</p>
+            <p class="movie-runtime">${runTime}</p>
+            <p class="movie-genre">${genre}</p>
+            <button class="add-to-watchlist fa-solid fa-circle-plus fa-lg" type="submit"></button>
+            <p class="button-content">Watchlist</p>
         </div>
         <p class="movie-content">${plot}</p>
         </div>
@@ -50,11 +50,13 @@ let movie = {
 
 searchButton.addEventListener("click", () => {
   movie.search();
+  document.querySelector(".explore").style.display = "none";
 });
 
 searchBox.addEventListener("keyup", (e) => {
   if (e.key == "Enter") {
     movie.search();
+    document.querySelector(".explore").style.display = "none";
   }
 });
 

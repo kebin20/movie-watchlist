@@ -106,7 +106,7 @@ input:active {
 }
   
 .explore {
-  display: none;
+  display: block;
   flex-direction: column;
   text-align: center;
   width: 150px;
@@ -124,8 +124,9 @@ input:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 1em;
   max-width: 590px;
+  border-bottom: 1px solid #E5E7EB;
 }
 
 img {
@@ -145,13 +146,39 @@ i.star-icon {
   margin-left: 1em;
 }
 
-button.add-to-watchlist {
-  margin-left: 1.5em;
+p.movie-runtime {
+  width: 10%;
+}
+
+p.movie-genre {
+  width: 55%;
+  margin-left: 1em;
+}
+
+p.movie-content {
+  color: #6B7280;
+}
+
+button.add-to-watchlist.fa-solid.fa-circle-plus.fa-lg {
+  width: 10%;
+  height: 2em;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+button.add-to-watchlist:hover{
+  margin-top: 2px;
+  border-bottom-width: 1px;
+  cursor: pointer;
+}
+button.add-to-watchlist:active{
+  margin-top: 5px;
+  border-bottom-width: 1px;
 }
 
 p.button-content {
   width: 15%;
-  margin-left: 1em;
 }
 
 .info-row {
@@ -179,6 +206,7 @@ p.button-content {
 
 .populated-movies {
   flex-direction: row;
+  padding-bottom: 2em;
 }
 
 .inner-top-container{
@@ -193,7 +221,7 @@ i.star-icon {
   padding: 0.5em;
 }
 
-h4.movie-genre {
+p.movie-genre {
   width: 100%;
 }
 
@@ -201,16 +229,8 @@ h4.movie-genre {
   margin-left: 2em;
 }
 
-h4.movie-runtime {
+p.movie-runtime {
   width: 52%;
-}
-
-p.button-content {
-  margin-left: 1em;
-}
-
-button.add-to-watchlist {
-  margin-left: 1em;
 }
 
 img {
