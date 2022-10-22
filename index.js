@@ -27,6 +27,7 @@ let movie = {
 
     populatedMovies.innerHTML = `
         <img src="${poster}" alt="Image of movie">
+        <div class="info-row">
         <div class="row-1">
             <h3 class="movie-title">${title}</h3>
             <i class="star-icon">Star</i> <span class="rating-value">${rating}</span>
@@ -38,6 +39,7 @@ let movie = {
             <p class="button-content">Add to watchlist</p>
         </div>
         <p class="movie-content">${plot}</p>
+        </div>
     `;
   },
 

@@ -50,8 +50,6 @@ a.link-to-watchlist {
     position: relative;
 }
 
-
-
 .no-result{
   display: none;
   flex-direction: column;
@@ -125,7 +123,13 @@ input:active {
 .populated-movies{
   display: flex;
   flex-direction: column;
-  margin-top: 4em;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 590px;
+}
+
+img {
+  width: 55%;
 }
 
 .row-1,.row-2{
@@ -133,6 +137,29 @@ input:active {
    align-items: center;
 }
 
+.row-2 {
+  width: 95%;
+}
+
+i.star-icon {
+  margin-left: 1em;
+}
+
+button.add-to-watchlist {
+  margin-left: 1.5em;
+}
+
+p.button-content {
+  width: 15%;
+  margin-left: 1em;
+}
+
+.info-row {
+  margin: 1em;
+}
+
+
+/* Media Queries */
 @media screen and (min-width: 700px) {
   .inner-top-container{
     width: 80%;
@@ -150,6 +177,10 @@ input:active {
     flex-direction: column;
 }
 
+.populated-movies {
+  flex-direction: row;
+}
+
 .inner-top-container{
   width: 100%;
 }
@@ -157,5 +188,34 @@ input:active {
 .top-container {
   width: 100%;
 }
+
+i.star-icon {
+  padding: 0.5em;
+}
+
+h4.movie-genre {
+  width: 100%;
+}
+
+.info-row {
+  margin-left: 2em;
+}
+
+h4.movie-runtime {
+  width: 52%;
+}
+
+p.button-content {
+  margin-left: 1em;
+}
+
+button.add-to-watchlist {
+  margin-left: 1em;
+}
+
+img {
+  width: 30%;
+}
+
 
 }
