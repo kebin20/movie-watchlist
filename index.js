@@ -4,47 +4,52 @@ const populatedMovies = document.getElementById("populated-movies");
 
 let movie = {
   apiKey: "ccdb7259",
-  fetchMovies: async function (movie) {
+  fetchMovie: async function (movie) {
     try {
       const response = await fetch(
-        `https://www.omdbapi.com/?i=tt3896198&apikey=${this.apiKey}&t=${movie}`
+        `https://www.omdbapi.com/?apikey=${this.apiKey}&s=${movie}`
       );
       const data = await response.json();
       console.log(data);
-      return this.displayMovies(data);
+      return this.getMoviesHtml(data);
     } catch {
       alert("No movie found.");
     }
   },
 
-  displayMovies: function (data) {
-    const poster = data.Poster;
-    const title = data.Title;
-    const rating = data.imdbRating;
-    const runTime = data.Runtime;
-    const genre = data.Genre;
-    const plot = data.Plot;
+  getMoviesHtml: async function (data) {
+    let moviesHtml = "";
+    for (let movie of data.Search) {
+      const res = await fetch(
+        `http://www.omdbapi.com/?apikey=ccdb7259&i=${movie.imdbID}`
+      );
+      const data = await res.json();
 
-    populatedMovies.innerHTML = `
-        <img src="${poster}" alt="Image of movie">
+      const { Poster, Title, imdbRating, Runtime, Genre, Plot } = data;
+      moviesHtml += `
+      <div class="movie-container">
+        <img src="${Poster}" alt="Image of movie">
         <div class="info-row">
         <div class="row-1">
-            <h3 class="movie-title">${title}</h3>
-            <i class="star-icon">⭐</i> <span class="rating-value">${rating}</span>
+            <h3 class="movie-title">${Title}</h3>
+            <i class="star-icon">⭐</i> <span class="rating-value">${imdbRating}</span>
         </div>
         <div class="row-2">
-            <p class="movie-runtime">${runTime}</p>
-            <p class="movie-genre">${genre}</p>
+            <p class="movie-runtime">${Runtime}</p>
+            <p class="movie-genre">${Genre}</p>
             <button class="add-to-watchlist fa-solid fa-circle-plus fa-lg" type="submit"></button>
             <p class="button-content">Watchlist</p>
         </div>
-        <p class="movie-content">${plot}</p>
+        <p class="movie-content">${Plot}</p>
         </div>
-    `;
+    </div>
+  `;
+    }
+    populatedMovies.innerHTML = moviesHtml;
   },
 
   search: function () {
-    this.fetchMovies(searchBox.value);
+    this.fetchMovie(searchBox.value);
   },
 };
 
@@ -60,6 +65,29 @@ searchBox.addEventListener("keyup", (e) => {
   }
 });
 
-fetch("http://www.omdbapi.com/?i=tt3896198&apikey=ccdb7259&t=fast&s=fast")
-  .then((res) => res.json())
-  .then((data) => console.log(data));
+//THIS IS TO DISPLAY ONE MOVIE ONLY
+//   displayMovies: function (data) {
+//     const poster = data.Poster;
+//     const title = data.Title;
+//     const rating = data.imdbRating;
+//     const runTime = data.Runtime;
+//     const genre = data.Genre;
+//     const plot = data.Plot;
+
+//     populatedMovies.innerHTML = `
+//         <img src="${poster}" alt="Image of movie">
+//         <div class="info-row">
+//         <div class="row-1">
+//             <h3 class="movie-title">${title}</h3>
+//             <i class="star-icon">⭐</i> <span class="rating-value">${rating}</span>
+//         </div>
+//         <div class="row-2">
+//             <p class="movie-runtime">${runTime}</p>
+//             <p class="movie-genre">${genre}</p>
+//             <button class="add-to-watchlist fa-solid fa-circle-plus fa-lg" type="submit"></button>
+//             <p class="button-content">Watchlist</p>
+//         </div>
+//         <p class="movie-content">${plot}</p>
+//         </div>
+//     `;
+//   },

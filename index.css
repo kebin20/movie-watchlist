@@ -129,6 +129,17 @@ input:active {
   border-bottom: 1px solid #E5E7EB;
 }
 
+
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #E5E7EB;
+}
+
 img {
   width: 55%;
 }
@@ -157,6 +168,7 @@ p.movie-genre {
 
 p.movie-content {
   color: #6B7280;
+  line-height: 1.5;
 }
 
 button.add-to-watchlist.fa-solid.fa-circle-plus.fa-lg {
@@ -204,9 +216,16 @@ p.button-content {
     flex-direction: column;
 }
 
-.populated-movies {
+div#populated-movies {
+  flex-direction: column;
+}
+
+.movie-container {
+  display: flex;
   flex-direction: row;
-  padding-bottom: 2em;
+  margin-bottom: 2em;
+  padding-bottom: 2.5em;
+  border-bottom: 1px solid #E5E7EB;
 }
 
 .inner-top-container{
