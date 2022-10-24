@@ -1,3 +1,6 @@
+/* =================
+Layout for both Homepage and My Watchlist
+================= */
 html{
   font-family: 'Inter', sans-serif;
 }
@@ -43,12 +46,16 @@ a.link-to-watchlist {
     display: block;
 }
 
+/* =================
+Style for the main display of movies
+================= */
 .main-content{
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
+
 
 .no-result{
   display: none;
@@ -59,6 +66,9 @@ a.link-to-watchlist {
   color: grey;
 }
 
+/* =================
+Search bar
+================= */
 .search-bar {
   width: 80%;
   display: flex;
@@ -105,6 +115,9 @@ input:active {
   border-top-left-radius:6px;
 }
   
+/* =================
+Placeholder for main movie content
+================= */
 .explore {
   display: block;
   flex-direction: column;
@@ -120,6 +133,48 @@ input:active {
   font-size: 1.5rem;
 }
 
+/* =================
+Placeholder for watchlist content
+================= */
+.empty-watchlist{
+  display: block;
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+  padding: 2em;
+  margin-top: 7em;
+}
+
+.empty-watchlist>p{
+  font-size: 0.9rem;
+}
+
+.empty-watchlist>h4 {
+  font-size: 1.2rem;
+  color: #DFDDDD;
+}
+
+.empty-watchlist>p{
+  font-size: 1rem;
+}
+
+a {
+  margin-right: 0.5em;
+}
+
+a>i{
+  color: black;
+}
+
+.button-row{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =================
+Movies to be populated
+================= */
 .populated-movies{
   display: flex;
   flex-direction: column;
@@ -128,7 +183,6 @@ input:active {
   max-width: 590px;
   border-bottom: 1px solid #E5E7EB;
 }
-
 
 
 .movie-container {
@@ -164,6 +218,7 @@ p.movie-runtime {
 p.movie-genre {
   width: 55%;
   margin-left: 1em;
+  margin-right: 1em;
 }
 
 p.movie-content {
@@ -171,26 +226,17 @@ p.movie-content {
   line-height: 1.5;
 }
 
-button.add-to-watchlist.fa-solid.fa-circle-plus.fa-lg {
-  width: 10%;
-  height: 2em;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-button.add-to-watchlist:hover{
+#add-to-watchlist-btn:hover{
   margin-top: 2px;
   border-bottom-width: 1px;
-  cursor: pointer;
 }
-button.add-to-watchlist:active{
+#add-to-watchlist-btn:active{
   margin-top: 5px;
   border-bottom-width: 1px;
 }
 
 p.button-content {
-  width: 15%;
+  width: 85%;
 }
 
 .info-row {
@@ -226,6 +272,7 @@ div#populated-movies {
   margin-bottom: 2em;
   padding-bottom: 2.5em;
   border-bottom: 1px solid #E5E7EB;
+  width: 115%;
 }
 
 .inner-top-container{
@@ -241,11 +288,12 @@ i.star-icon {
 }
 
 p.movie-genre {
-  width: 100%;
+  width: 135%;
 }
 
 .info-row {
   margin-left: 2em;
+  width: 100%;
 }
 
 p.movie-runtime {
@@ -256,5 +304,8 @@ img {
   width: 30%;
 }
 
-
+p.button-content {
+  width: 86%;
+}
+  
 }

@@ -1,6 +1,7 @@
 const searchBox = document.getElementById("search-box");
 const searchButton = document.getElementById("search-button");
 const populatedMovies = document.getElementById("populated-movies");
+const noResultScreen = document.getElementById("no-result");
 
 let movie = {
   apiKey: "ccdb7259",
@@ -13,7 +14,8 @@ let movie = {
       console.log(data);
       return this.getMoviesHtml(data);
     } catch {
-      alert("No movie found.");
+      noResultScreen.style.display = "block"
+      // alert("No movie found.");
     }
   },
 
@@ -21,7 +23,7 @@ let movie = {
     let moviesHtml = "";
     for (let movie of data.Search) {
       const res = await fetch(
-        `http://www.omdbapi.com/?apikey=ccdb7259&i=${movie.imdbID}`
+        `https://www.omdbapi.com/?apikey=ccdb7259&i=${movie.imdbID}`
       );
       const data = await res.json();
 
@@ -37,8 +39,7 @@ let movie = {
         <div class="row-2">
             <p class="movie-runtime">${Runtime}</p>
             <p class="movie-genre">${Genre}</p>
-            <button class="add-to-watchlist fa-solid fa-circle-plus fa-lg" type="submit"></button>
-            <p class="button-content">Watchlist</p>
+            <a href="#" id="add-to-watchlist-btn"><i class="fa-solid fa-circle-plus fa-lg"></i></a><p class="button-content">Watchlist</p>
         </div>
         <p class="movie-content">${Plot}</p>
         </div>
@@ -65,7 +66,9 @@ searchBox.addEventListener("keyup", (e) => {
   }
 });
 
-//THIS IS TO DISPLAY ONE MOVIE ONLY
+
+ // return this.displayMovies(data)
+  //THIS IS TO DISPLAY ONE MOVIE ONLY
 //   displayMovies: function (data) {
 //     const poster = data.Poster;
 //     const title = data.Title;
@@ -84,8 +87,7 @@ searchBox.addEventListener("keyup", (e) => {
 //         <div class="row-2">
 //             <p class="movie-runtime">${runTime}</p>
 //             <p class="movie-genre">${genre}</p>
-//             <button class="add-to-watchlist fa-solid fa-circle-plus fa-lg" type="submit"></button>
-//             <p class="button-content">Watchlist</p>
+//             <a href="#" id="add-to-watchlist-btn"><i class="fa-solid fa-circle-plus fa-lg"></i></a><p class="button-content">Add to Watchlist</p>
 //         </div>
 //         <p class="movie-content">${plot}</p>
 //         </div>

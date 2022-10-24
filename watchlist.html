@@ -5,23 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Watchlist</title>
+    <title>My Watchlist</title>
     <link rel="stylesheet" href="index.css">
+    <!--   Icons -->
+    <script src="https://kit.fontawesome.com/566b902c1e.js" crossorigin="anonymous"></script>
+    <!--   Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;800&family=Smythe&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="main-page">
-        <img src="" alt="background picture of movies" class="bg-top">
-        <div class="top-container">
-            <h1 class="main-page-title">My Watchlist</h1>
-            <a class="link-to-watchlist" href="./index.html">Search for Movies</a>
+    <header class="top-container">
+        <div class="inner-top-container">
+            <h1 class="top-page-title">My Watchlist</h1>
+            <a class="link-to-watchlist" href="./index.html">Search for movies</a>
         </div>
-        <div class="empty-screen">
-            <p class="empty-screen-text">Your watchlist is looking a little empty</p>
-            <p class="lets-add-movies"><i class=""></i>Let's add some movies!</p>
+    </header>
+
+
+    <div class="main-content">
+
+        <div class="populated-movies" id="populated-movies">
         </div>
-    </div>
-    <script src="index.js"></script>
+
+        <div class="empty-watchlist">
+            <h4>Your Watchlist is looking a little empty...</h4>
+            <div class="button-row">
+                <a href="./index.html" id="add-to-watchlist-btn"><i class="fa-solid fa-circle-plus fa-lg"></i></a>
+                <p>Let's add some movies!</p>
+            </div>
+        </div>
+
+
+        <script src="index.js"></script>
 </body>
 
 </html>
