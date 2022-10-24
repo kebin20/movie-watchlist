@@ -9,6 +9,10 @@ Challenges:
 
 Interesting thing to note is that you can't use a forEach or map for async. 
 
+- 24/10 New challenge faced: Difficulty in accessing the data/value solved by a promise otuside the scope. This data is needed so that I can push the selected movie into a global array after clicking the watchlist button. Will need to figure out how to solve this. 
+SOLVED: Set a global variable and pushed the data array into it from getMoviesHtml function in the movie object.
+
+
 Next steps: 
  
- - To enable users to store the selected movie into their personal watchlist using localStorage. The CSS and HTML setup will need to be done for the watchlist.html along with populating the js code. 
+ - To enable users to store the selected movie into their personal watchlist using localStorage. The CSS and HTML setup will need to be done for the watchlist.html along with populating the js code. (In progress)
