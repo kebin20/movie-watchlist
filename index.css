@@ -226,13 +226,30 @@ p.movie-content {
   line-height: 1.5;
 }
 
-#add-to-watchlist-btn,#remove-from-watchlist-btn:hover{
-  margin-top: 2px;
-  border-bottom-width: 1px;
+button#add-to-watchlist-btn{
+  background-image: url("./icons/plus.svg" ); 
 }
-#add-to-watchlist-btn,#remove-from-watchlist-btn:active{
+
+button#remove-from-watchlist-btn{
+  background-image: url("./icons/minus.svg");
+}
+
+#add-to-watchlist-btn,#remove-from-watchlist-btn {
+  border-radius: 2em;
+  width: 15%;
+  height: 2em;
+  border: none;
+  background: grey;
+}
+
+#add-to-watchlist-btn:hover,#remove-from-watchlist-btn:hover{
+  margin-top: 3px;
+  border-bottom-width: 2px;
+}
+
+#add-to-watchlist-btn:active,#remove-from-watchlist-btn:active{
   margin-top: 5px;
-  border-bottom-width: 1px;
+  border-bottom-width: 2px;
 }
 
 p.button-content {
