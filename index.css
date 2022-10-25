@@ -140,7 +140,7 @@ Placeholder for watchlist content
   display: block;
   flex-direction: column;
   text-align: center;
-  width: 80%;
+  width: 90%;
   padding: 2em;
   margin-top: 7em;
 }
@@ -158,18 +158,11 @@ Placeholder for watchlist content
   font-size: 1rem;
 }
 
-a {
-  margin-right: 0.5em;
-}
-
-a>i{
-  color: black;
-}
-
 .button-row{
   display:flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row-reverse;
 }
 
 /* =================
@@ -226,13 +219,25 @@ p.movie-content {
   line-height: 1.5;
 }
 
-button#add-to-watchlist-btn{
+
+/* =================
+Add and remove buttons 
+================= */
+button#add-to-watchlist-btn,button#watchlist-screen-btn{
   background: url("./icons/plus.svg" ) no-repeat; 
 }
 
 button#remove-from-watchlist-btn{
   background: url("./icons/minus.svg") no-repeat;
 }
+
+button#watchlist-screen-btn {
+  width: 7%;
+  height: 2em;
+  border: none;
+  margin-right: 1em;
+}
+
 
 #add-to-watchlist-btn,#remove-from-watchlist-btn {
   width: 30%;
@@ -275,6 +280,11 @@ p.button-content {
     height: 2em;
     border: none;
     margin-left: 2em;
+}
+
+button#watchlist-screen-btn {
+  width: 4%;
+  margin: 0;
 }
 
 p.movie-genre {
@@ -336,6 +346,11 @@ img {
 
 p.button-content {
   width: 86%;
+}
+
+button#watchlist-screen-btn {
+  width: 4%;
+  margin: 0;
 }
   
 }
