@@ -1,11 +1,9 @@
 let moviesFromLocalStorage = JSON.parse(localStorage.getItem("addedMovies"));
-// console.log(moviesFromLocalStorage); //check; its working!
+console.log(moviesFromLocalStorage); //check; its working!
 localStorage.clear();
 
 function renderWatchlist(moviesFromLocalStorage) {
   const watchlistHtml = moviesFromLocalStorage.map((watchlist, index) => {
-    console.log(watchlist);
-    console.log(index);
     return `
           <div class="movie-container">
           <img src="${watchlist.Poster}" alt="Image of movie">
@@ -29,18 +27,19 @@ function renderWatchlist(moviesFromLocalStorage) {
     document.getElementById("populated-movies-watchlist").innerHTML +=
       watchlistHtml.join("");
   }
-  document.querySelector(".empty-watchlist").style.display = "none";
+    document.querySelector(".empty-watchlist").style.display = "none";
 }
 
 document.addEventListener("click", (e) => {
   if (e.target.dataset.indexNumber) {
+    console.log(e.target.dataset.indexNumber);
     removeMovie(e.target.dataset.indexNumber);
   }
 });
 
 function removeMovie(index) {
   moviesFromLocalStorage.splice(index, 1);
-  renderWatchlist();
+  renderWatchlist(moviesFromLocalStorage);
 }
 
 renderWatchlist(moviesFromLocalStorage);

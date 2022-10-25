@@ -165,6 +165,28 @@ Placeholder for watchlist content
   flex-direction: row-reverse;
 }
 
+a.watchlist-p:link { 
+  text-decoration: none; 
+}
+
+
+a.watchlist-p:visited { 
+  text-decoration: none; 
+  color: black;
+}
+
+
+a.watchlist-p:hover { 
+  text-decoration: none; 
+  color: #5f636d;
+}
+
+
+a.watchlist-p:active { 
+  text-decoration: none; 
+  color: #5f636d;
+}
+
 /* =================
 Movies to be populated after search 
 ================= */
@@ -174,7 +196,6 @@ Movies to be populated after search
   align-items: center;
   margin: 1em;
   max-width: 590px;
-  border-bottom: 1px solid #E5E7EB;
 }
 
 
@@ -236,14 +257,15 @@ button#watchlist-screen-btn {
   height: 2em;
   border: none;
   margin-right: 1em;
+  cursor: pointer;
 }
-
 
 #add-to-watchlist-btn,#remove-from-watchlist-btn {
   width: 30%;
   height: 2em;
   border: none;
   margin-left: 2em;
+  cursor: pointer;
 }
 
 #add-to-watchlist-btn:hover,#remove-from-watchlist-btn:hover{
