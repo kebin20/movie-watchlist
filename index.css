@@ -217,7 +217,7 @@ p.movie-runtime {
 
 p.movie-genre {
   width: 55%;
-  margin-left: 1em;
+  margin-left: 3em;
   margin-right: 1em;
 }
 
@@ -227,19 +227,18 @@ p.movie-content {
 }
 
 button#add-to-watchlist-btn{
-  background-image: url("./icons/plus.svg" ); 
+  background: url("./icons/plus.svg" ) no-repeat; 
 }
 
 button#remove-from-watchlist-btn{
-  background-image: url("./icons/minus.svg");
+  background: url("./icons/minus.svg") no-repeat;
 }
 
 #add-to-watchlist-btn,#remove-from-watchlist-btn {
-  border-radius: 2em;
-  width: 15%;
+  width: 30%;
   height: 2em;
   border: none;
-  background: grey;
+  margin-left: 2em;
 }
 
 #add-to-watchlist-btn:hover,#remove-from-watchlist-btn:hover{
@@ -262,7 +261,7 @@ p.button-content {
 
 
 /* Media Queries */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 700px) and (max-width: 1050px) {
   .inner-top-container{
     width: 80%;
   }
@@ -270,6 +269,20 @@ p.button-content {
   .search-bar {
     width: 70%
   }
+
+  #add-to-watchlist-btn, #remove-from-watchlist-btn {
+    width: 11%;
+    height: 2em;
+    border: none;
+    margin-left: 2em;
+}
+
+p.movie-genre {
+  width: 100%;
+  margin-left: 3em;
+  margin-right: 1em;
+}
+
 }
 
 @media screen and (min-width: 1100px) {
