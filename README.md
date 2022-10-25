@@ -15,4 +15,6 @@ SOLVED: Set a global variable and pushed the data array into it from getMoviesHt
 
 Next steps: 
  
- - To enable users to store the selected movie into their personal watchlist using localStorage. The CSS and HTML setup will need to be done for the watchlist.html along with populating the js code. (In progress)
+ - To enable users to store the selected movie into their personal watchlist using localStorage. The CSS and HTML setup will need to be done for the watchlist.html along with populating the js code. COMPLETED  (needed to create a separate watchlist js file)
+
+ - Make the remove button work in order to remove the movie items from the DOM and from the Array (in progress)
