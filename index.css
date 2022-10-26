@@ -137,7 +137,7 @@ Placeholder for main movie content
 Placeholder for watchlist content
 ================= */
 .empty-watchlist{
-  display: block;
+  display: none;
   flex-direction: column;
   text-align: center;
   width: 90%;

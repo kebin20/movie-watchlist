@@ -1,6 +1,13 @@
-let moviesFromLocalStorage = JSON.parse(localStorage.getItem("addedMovies"));
+let moviesFromLocalStorage =
+  JSON.parse(localStorage.getItem("addedMovies")) || [];
 console.log(moviesFromLocalStorage); //check; its working!
-localStorage.clear();
+// localStorage.clear();
+
+
+
+if (moviesFromLocalStorage.length === 0) {
+  document.querySelector(".empty-watchlist").style.display = "block";
+}
 
 function renderWatchlist(moviesFromLocalStorage) {
   const watchlistHtml = moviesFromLocalStorage.map((watchlist, index) => {
@@ -27,7 +34,6 @@ function renderWatchlist(moviesFromLocalStorage) {
     document.getElementById("populated-movies-watchlist").innerHTML +=
       watchlistHtml.join("");
   }
-    document.querySelector(".empty-watchlist").style.display = "none";
 }
 
 document.addEventListener("click", (e) => {
@@ -39,7 +45,12 @@ document.addEventListener("click", (e) => {
 
 function removeMovie(index) {
   moviesFromLocalStorage.splice(index, 1);
-  renderWatchlist(moviesFromLocalStorage);
+  localStorage.setItem(
+    " moviesFromLocalStorage",
+    JSON.stringify(moviesFromLocalStorage)
+  );
+  // renderWatchlist(moviesFromLocalStorage);
 }
 
 renderWatchlist(moviesFromLocalStorage);
+
