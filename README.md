@@ -17,4 +17,8 @@ Next steps:
  
  - To enable users to store the selected movie into their personal watchlist using localStorage. The CSS and HTML setup will need to be done for the watchlist.html along with populating the js code. COMPLETED  (needed to create a separate watchlist js file)
 
- - Make the remove button work in order to remove the movie items from the DOM and from the Array (in progress)
+ - Make the remove button work in order to remove the movie items from the DOM and from the Array  COMPLETED 
+
+ - Make it so that when you press the add button, a tick + added element will appear(IN PROGRESS)
+
+ - Make a light/dark mode toggle (IN PROGRESS)

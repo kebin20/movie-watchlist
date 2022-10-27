@@ -1,15 +1,13 @@
 let moviesFromLocalStorage =
   JSON.parse(localStorage.getItem("addedMovies")) || [];
-console.log(moviesFromLocalStorage); //check; its working!
-// localStorage.clear();
-
-
 
 if (moviesFromLocalStorage.length === 0) {
   document.querySelector(".empty-watchlist").style.display = "block";
+} else {
+  renderWatchlist(moviesFromLocalStorage);
 }
 
-function renderWatchlist(moviesFromLocalStorage) {
+function renderWatchlist() {
   const watchlistHtml = moviesFromLocalStorage.map((watchlist, index) => {
     return `
           <div class="movie-container">
@@ -31,26 +29,27 @@ function renderWatchlist(moviesFromLocalStorage) {
   });
 
   if (document.getElementById("populated-movies-watchlist") != null) {
-    document.getElementById("populated-movies-watchlist").innerHTML +=
+    document.getElementById("populated-movies-watchlist").innerHTML =
       watchlistHtml.join("");
   }
 }
 
 document.addEventListener("click", (e) => {
   if (e.target.dataset.indexNumber) {
-    console.log(e.target.dataset.indexNumber);
     removeMovie(e.target.dataset.indexNumber);
   }
 });
 
 function removeMovie(index) {
   moviesFromLocalStorage.splice(index, 1);
-  localStorage.setItem(
-    " moviesFromLocalStorage",
-    JSON.stringify(moviesFromLocalStorage)
-  );
-  // renderWatchlist(moviesFromLocalStorage);
+  if (moviesFromLocalStorage.length === 0) {
+    document.querySelector(".empty-watchlist").style.display = "block";
+    localStorage.clear();
+    localStorage.setItem(
+      "moviesFromLocalStorage",
+      JSON.stringify(moviesFromLocalStorage)
+    );
+  }
+  renderWatchlist();
 }
-
-renderWatchlist(moviesFromLocalStorage);
 
