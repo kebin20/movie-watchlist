@@ -73,8 +73,6 @@ document.addEventListener("click", (e) => {
   if (e.target.dataset.movie) {
     addMovies(e.target.dataset.movie);
     alert("Movie added to watchlist!");
-  } else if (e.target.dataset.indexNumber) {
-    removeMovie(e.target.dataset.indexNumber);
   }
 });
 
