@@ -1,4 +1,4 @@
-let moviesFromLocalStorage =
+const moviesFromLocalStorage =
   JSON.parse(localStorage.getItem("addedMovies")) || [];
 
 if (moviesFromLocalStorage.length === 0) {

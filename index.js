@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 const searchBox = document.getElementById("search-box");
 const searchButton = document.getElementById("search-button");
 const populatedMovies = document.getElementById("populated-movies");
@@ -6,7 +7,7 @@ const noResultScreen = document.getElementById("no-result");
 let addedMovies = [];
 let movieArrayData = [];
 
-let movie = {
+const movie = {
   apiKey: "ccdb7259",
   fetchMovie: async function (movie) {
     try {
@@ -67,7 +68,7 @@ searchBox.addEventListener("keyup", (e) => {
   }
 });
 
-//Adding to the watchlist function
+// Adding to the watchlist function
 
 document.addEventListener("click", (e) => {
   if (e.target.dataset.movie) {
@@ -78,6 +79,7 @@ document.addEventListener("click", (e) => {
 
 function addMovies(movieId) {
   const targetMovie = movieArrayData.filter((movie) => {
+    // eslint-disable-next-line eqeqeq
     return movie.imdbID == movieId;
   })[0];
   addedMovies.push(targetMovie);
