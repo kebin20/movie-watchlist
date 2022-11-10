@@ -22,3 +22,7 @@ Next steps:
  - Make it so that when you press the add button, a tick + added element will appear(IN PROGRESS)
 
  - Make a light/dark mode toggle (IN PROGRESS)
+ 
+ Future Implementation:
+ 
+ - Recreate this using React and specifically only for games
