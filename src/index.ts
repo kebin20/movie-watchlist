@@ -1,15 +1,16 @@
-/* eslint-disable prefer-const */
-const searchBox = document.getElementById("search-box");
-const searchButton = document.getElementById("search-button");
-const populatedMovies = document.getElementById("populated-movies");
-const noResultScreen = document.getElementById("no-result");
+import {Movie} from "./Interfaces"
 
-let addedMovies = [];
-let movieArrayData = [];
+const searchBox  = document.getElementById("search-box") as HTMLInputElement;
+const searchButton = document.getElementById("search-button") as HTMLElement;
+const populatedMovies  = document.getElementById("populated-movies") as HTMLElement;
+const noResultScreen  = document.getElementById("no-result") as HTMLElement;
+
+let addedMovies : {}[] = [];
+let movieArrayData : {}[] = [];
 
 const movie = {
   apiKey: "ccdb7259",
-  fetchMovie: async function (movie) {
+  fetchMovie: async function (movie: string) {
     try {
       const response = await fetch(
         `https://www.omdbapi.com/?apikey=${this.apiKey}&s=${movie}`
@@ -21,13 +22,14 @@ const movie = {
     }
   },
 
-  getMoviesHtml: async function (data) {
+  getMoviesHtml: async function (data : Movie[]) {
     let moviesHtml = "";
     for (let movie of data.Search) {
       const res = await fetch(
         `https://www.omdbapi.com/?apikey=ccdb7259&i=${movie.imdbID}`
       );
       const data = await res.json();
+      console.log(data)
       const { Poster, Title, imdbRating, Runtime, Genre, Plot, imdbID } = data;
       moviesHtml += `
       <div class="movie-container">

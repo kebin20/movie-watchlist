@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist Homepage</title>
+    <!-- Bootstrap Toggle -->
+    <!-- <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./src/index.css">
+    <!--   Icons -->
+    <script src="https://kit.fontawesome.com/566b902c1e.js" crossorigin="anonymous"></script>
+    <!--   Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;800&family=Smythe&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="top-container">
+        <!--   <input id="toggle-event" type="checkbox" data-toggle="toggle"> -->
+        <div class="inner-top-container">
+            <h1 class="top-page-title">Find your film</h1>
+            <a class="link-to-watchlist" href="./watchlist.html">My Watchlist</a>
+        </div>
+    </header>
+
+
+    <div class="main-content">
+
+        <div class="search-bar">
+            <label for="search-box"></label>
+            <input type="search" class="search-box" id="search-box" placeholder="Search for a movie">
+            <button class="search-button" id="search-button" type="submit">Search</button>
+        </div>
+
+        <div class="populated-movies" id="populated-movies">
+        </div>
+
+        <div class="explore">
+            <i class="fa-solid fa-film fa-5x"></i>
+            <p>Start Exploring</p>
+        </div>
+        <p class="no-result" id="no-result">Unable to find what you're looking for. Please try another search.</p>
+    </div>
+
+
+    <script src="./src/index.ts"></script>
+    <!-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> -->
+</body>
+
+</html>
