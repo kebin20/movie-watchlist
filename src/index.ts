@@ -1,9 +1,9 @@
-import {Movie} from "./Interfaces"
+import {MoviesSearchQuery} from "./Interfaces"
 
 const searchBox  = document.getElementById("search-box") as HTMLInputElement;
-const searchButton = document.getElementById("search-button") as HTMLElement;
-const populatedMovies  = document.getElementById("populated-movies") as HTMLElement;
-const noResultScreen  = document.getElementById("no-result") as HTMLElement;
+const searchButton = document.getElementById("search-button") as HTMLButtonElement;
+const populatedMovies  = document.getElementById("populated-movies") as HTMLDivElement;
+const noResultScreen  = document.getElementById("no-result") as HTMLParagraphElement;
 
 let addedMovies : {}[] = [];
 let movieArrayData : {}[] = [];
@@ -22,14 +22,14 @@ const movie = {
     }
   },
 
-  getMoviesHtml: async function (data : Movie[]) {
+  getMoviesHtml: async function (data : MoviesSearchQuery) {
+    console.log(data)
     let moviesHtml = "";
     for (let movie of data.Search) {
       const res = await fetch(
         `https://www.omdbapi.com/?apikey=ccdb7259&i=${movie.imdbID}`
       );
       const data = await res.json();
-      console.log(data)
       const { Poster, Title, imdbRating, Runtime, Genre, Plot, imdbID } = data;
       moviesHtml += `
       <div class="movie-container">
