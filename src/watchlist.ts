@@ -1,14 +1,21 @@
+import {Movie} from "./Interfaces"
+
+const placeHolder = document.querySelector(".empty-watchlist") as HTMLDivElement
+const populatedMovies = document.getElementById("populated-movies-watchlist") as HTMLDivElement
+
 const moviesFromLocalStorage =
   JSON.parse(localStorage.getItem("addedMovies")) || [];
 
 if (moviesFromLocalStorage.length === 0) {
-  document.querySelector(".empty-watchlist").style.display = "block";
+  placeHolder.style.display = "block";
 } else {
   renderWatchlist(moviesFromLocalStorage);
 }
 
-function renderWatchlist() {
-  const watchlistHtml = moviesFromLocalStorage.map((watchlist, index) => {
+console.log(moviesFromLocalStorage)
+
+function renderWatchlist(moviesFromLocalStorage) {
+  const watchlistHtml = moviesFromLocalStorage.map((watchlist: Movie[], index: number) => {
     return `
           <div class="movie-container">
           <img src="${watchlist.Poster}" alt="Image of movie">
@@ -28,22 +35,23 @@ function renderWatchlist() {
       `;
   });
 
-  if (document.getElementById("populated-movies-watchlist") != null) {
-    document.getElementById("populated-movies-watchlist").innerHTML =
+  if (populatedMovies != null) {
+    populatedMovies.innerHTML =
       watchlistHtml.join("");
   }
 }
 
-document.addEventListener("click", (e) => {
-  if (e.target.dataset.indexNumber) {
-    removeMovie(e.target.dataset.indexNumber);
+document.addEventListener("click", (event : Event) => {
+  const targetElement = event.target as HTMLElement
+  if (targetElement.dataset.indexNumber) {
+    removeMovie(targetElement.dataset.indexNumber);
   }
 });
 
-function removeMovie(index) {
+function removeMovie(index: number) {
   moviesFromLocalStorage.splice(index, 1);
   if (moviesFromLocalStorage.length === 0) {
-    document.querySelector(".empty-watchlist").style.display = "block";
+    placeHolder.style.display = "block";
     localStorage.clear();
     localStorage.setItem(
       "moviesFromLocalStorage",

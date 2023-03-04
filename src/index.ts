@@ -1,12 +1,13 @@
-import {MoviesSearchQuery} from "./Interfaces"
+import {Movie, MoviesSearchQuery} from "./Interfaces"
 
 const searchBox  = document.getElementById("search-box") as HTMLInputElement;
 const searchButton = document.getElementById("search-button") as HTMLButtonElement;
 const populatedMovies  = document.getElementById("populated-movies") as HTMLDivElement;
 const noResultScreen  = document.getElementById("no-result") as HTMLParagraphElement;
+const placeHolder = document.querySelector(".explore") as HTMLDivElement;
 
-let addedMovies : {}[] = [];
-let movieArrayData : {}[] = [];
+let addedMovies : Movie[] = [];
+let movieArrayData : Movie[] = [];
 
 const movie = {
   apiKey: "ccdb7259",
@@ -60,26 +61,27 @@ const movie = {
 
 searchButton.addEventListener("click", () => {
   movie.search();
-  document.querySelector(".explore").style.display = "none";
+  placeHolder.style.display = "none";
 });
 
-searchBox.addEventListener("keyup", (e) => {
-  if (e.key === "Enter") {
+searchBox.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
     movie.search();
-    document.querySelector(".explore").style.display = "none";
+    placeHolder.style.display = "none";
   }
 });
 
 // Adding to the watchlist function
 
-document.addEventListener("click", (e) => {
-  if (e.target.dataset.movie) {
-    addMovies(e.target.dataset.movie);
+document.addEventListener("click", (event : Event) => {
+  const targetElement = event.target as HTMLElement
+  if (targetElement?.dataset?.movie) {
+    addMovies(targetElement.dataset.movie);
     alert("Movie added to watchlist!");
   }
 });
 
-function addMovies(movieId) {
+function addMovies(movieId : string) {
   const targetMovie = movieArrayData.filter((movie) => {
     // eslint-disable-next-line eqeqeq
     return movie.imdbID == movieId;
