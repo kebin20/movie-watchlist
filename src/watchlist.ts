@@ -1,10 +1,11 @@
-import {Movie} from "./Interfaces"
+import {Movie, MoviesSearchQuery} from "./Interfaces"
 
 const placeHolder = document.querySelector(".empty-watchlist") as HTMLDivElement
 const populatedMovies = document.getElementById("populated-movies-watchlist") as HTMLDivElement
+const localStorageItem = localStorage.getItem("addedMovies")
 
 const moviesFromLocalStorage =
-  JSON.parse(localStorage.getItem("addedMovies")) || [];
+ localStorageItem ?  JSON.parse(localStorageItem) : [];
 
 if (moviesFromLocalStorage.length === 0) {
   placeHolder.style.display = "block";
@@ -14,8 +15,8 @@ if (moviesFromLocalStorage.length === 0) {
 
 console.log(moviesFromLocalStorage)
 
-function renderWatchlist(moviesFromLocalStorage) {
-  const watchlistHtml = moviesFromLocalStorage.map((watchlist: Movie[], index: number) => {
+function renderWatchlist() {
+  const watchlistHtml = moviesFromLocalStorage.Search.map((watchlist : Movie[] , index: number) => {
     return `
           <div class="movie-container">
           <img src="${watchlist.Poster}" alt="Image of movie">
